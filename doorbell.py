@@ -94,11 +94,9 @@ def record_video(output_file, record_seconds=20):
     print(f"Video saved to {output_file}")
 
 def send_email(visitor_name, audio_file, video_file):
-    sender_email = "coaproject717457@gmail.com"
-    recipient_email = "tusyamarsonia@gmail.com"
-    app_password = "tjbtdzxeoqhkwmaa"  # DO NOT KEEP GMAIL PASSWORD
-
-    # COMPOSING THE MAIL TO BE SENT 
+    sender_email = ""
+    recipient_email = ""
+    app_password = ""  # DO NOT KEEP GMAIL PASSWORD
     msg = MIMEMultipart()
     msg['From'] = sender_email
     msg['To'] = recipient_email
@@ -192,7 +190,6 @@ if __name__ == "__main__":
     cap = cv2.VideoCapture(0)
     while cap.isOpened():
         ret, frame = cap.read()
-    # SHOW IMAGE BACK TO SCREEN
         cv2.imshow('Image Collection', frame)
         if cv2.waitKey(1) & 0XFF == ord('q'):
             break
